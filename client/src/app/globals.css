@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+body {
+  background: #E5E5E5;
+}
+
+main {
+  max-width: 770px;
+}
