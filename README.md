@@ -1,6 +1,6 @@
-## Development
+Для запуска:
 
-Для запуска в режиме разработки:
 
 ```bash
-npm run dev
+npm run dev    # Разработка
+npm run prod    # Прод
