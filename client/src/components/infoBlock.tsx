@@ -12,11 +12,25 @@ interface Props {
   type?: number;
 }
 
-export const InfoBlock: React.FC<Props> = ({className, text, width, height, alt, img, type}) => {
+export const InfoBlock: React.FC<Props> = ({ className, text, width, height, alt, img, type }) => {
   return (
-    <Link href={''} className={className}>
-      {type !== 2 && <Image className="info__block__img" width={width} height={height} alt={alt || ''} src={img || ''} />}
-      {type === 2 && <span className="info__dot"></span>}
+    <Link 
+      href={''} 
+      className={`flex h-[60px] items-center gap-[10px] pl-[16px] text-[20px] tracking-[-0.45px] transition-all duration-300 ${className}`}
+    >
+      {type !== 2 && (
+        <div className='w-[35px] flex justify-center'>
+          <Image 
+            width={width} 
+            height={height} 
+            alt={alt || ''} 
+            src={img || ''} 
+          />
+        </div>
+      )}
+      {type === 2 && (
+        <span className="h-[10px] w-[10px] rounded-full bg-gray mr-[5px] "></span>
+      )}
       {text}
     </Link>
   );

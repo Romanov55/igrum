@@ -1,5 +1,4 @@
 import "./globals.css";
-import "../css/style.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 
@@ -8,6 +7,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="ru">
       <body>
