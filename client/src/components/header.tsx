@@ -3,6 +3,7 @@
 import { getInfo } from '@/actions';
 import { useStore } from '@/context';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import React, { useEffect } from 'react';
 import z from "zod";
 
@@ -39,6 +40,7 @@ export type City = z.infer<typeof CitySchema>;
 
 export const Header: React.FC<Props> = () => {
   const { setUserInfo } = useStore();
+  const pathname = usePathname();
   
   useEffect(() => {
     const fetchAndSetUser = async () => {
@@ -56,7 +58,7 @@ export const Header: React.FC<Props> = () => {
 
   return (
     <header className="max-w-[770px] flex justify-between mx-[21px] mr-[10px] items-center h-12">
-      <span className="text-[28px] tracking-[0.38%] text-gray">Профиль</span>
+      <span className="text-[28px] tracking-[0.38%] text-gray">{pathname === '/' ? 'Главная' : 'Профиль'}</span>
       <button>
         <Image 
           width={28}
